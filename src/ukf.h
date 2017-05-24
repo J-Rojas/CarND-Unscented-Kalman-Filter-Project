@@ -108,6 +108,11 @@ public:
    * @param meas_package The measurement at k+1
    */
   void UpdateRadar(MeasurementPackage meas_package);
+
+protected:
+
+  MatrixXd TransformedSigmaPoints(MatrixXd& Xsig_aug, double time_delta);
+  void PredictRadarMeasurement(MatrixXd& Zsig, VectorXd& z_out, MatrixXd& S_out);
 };
 
 #endif /* UKF_H */
